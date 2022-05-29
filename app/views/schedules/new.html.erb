@@ -1,0 +1,11 @@
+<%= form_with(model:@schedule, local:true) do |f|%>
+<%= render 'error_messages', object: f.object %>
+<%= f.text_field :title %>
+<%= f.date_field :start_date %>
+<%= f.date_field :finish_date %>
+<%= f.check_box :full_day %>
+<%= f.text_area :memo %>
+
+<%= f.submit 'スケジュールを新規登録する' %>
+<%=link_to "スケジュール一覧に戻る", schedules_path %>
+<% end %>

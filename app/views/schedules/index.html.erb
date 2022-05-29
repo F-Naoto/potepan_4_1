@@ -1,0 +1,21 @@
+Ruby on Rails スケジュール管理アプリ
+
+<table>
+	<tbody>
+		<tr>
+			<td>ID</td>
+			<td>タイトル</td>
+			<td>開始日</td>
+			<td>終了日</td>
+			<td>終日</td>
+			<td>スケジュール更新日時</td>
+			<td>確認</td>
+			<td>編集</td>
+			<td>削除</td>
+		</tr>
+    <%=render @schedules %>
+	</tbody>
+</table>
+<%=link_to "スケジュール新規登録", new_schedule_path %>
+
+現在の日時 : <%= Date.today%>  スケジュール合計 : <%= @schedules.count%>
