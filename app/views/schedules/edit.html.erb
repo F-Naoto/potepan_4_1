@@ -1,11 +1,31 @@
+<h2>スケジュール編集</h2>
+
 <%= form_with(model:@schedule, local:true) do |f|%>
 <%= render 'error_messages', object: f.object %>
-<%= f.text_field :title %>
-<%= f.date_field :start_date %>
-<%= f.date_field :finish_date %>
-<%= f.check_box :full_day %>
-<%= f.text_area :memo %>
-
-<%= f.submit 'スケジュールの編集を完了する' %>
+<table>
+	<tbody>
+		<tr>
+			<td>タイトル</td>
+			<td><%= f.text_field :title %></td>
+		</tr>
+		<tr>
+			<td>開始日</td>
+			<td><%= f.date_field :start_date %></td>
+		</tr>
+		<tr>
+			<td>投稿日時</td>
+			<td><%= f.date_field :finish_date %></td>
+		</tr>
+		<tr>
+			<td>終日</td>
+			<td><%= f.check_box :full_day %><br>終日の場合はチェックを入れます</td>
+		</tr>
+		<tr>
+			<td>スケジュールメモ</td>
+			<td><%= f.text_area :memo %></td>
+		</tr>
+	</tbody>
+</table>
+<%= f.submit 'スケジュールの編集を完了する', class:"schedule_submit" %>
 <% end %>
-<%= link_to "スケジュールの一覧に戻る", schedules_path %>
+<%= link_to "スケジュール一覧に戻る", schedules_path %>

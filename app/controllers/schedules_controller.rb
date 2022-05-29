@@ -1,6 +1,6 @@
 class SchedulesController < ApplicationController
+  before_action :set_schedules
 def index
-@schedules = Schedule.all
 end
 
 def show
@@ -36,7 +36,6 @@ def update
     flash.now[:danger] = "スケジュールを更新できませんでした"
     render "edit"
   end
-
 end
 
 def destroy
@@ -50,7 +49,9 @@ def destroy
   end
 end
 
-
+def set_schedules
+@schedules = Schedule.all
+end
 private
 def schedule_params
   params.require(:schedule).permit(:title,:start_date,:finish_date,:full_day,:memo)

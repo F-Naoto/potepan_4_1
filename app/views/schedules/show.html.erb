@@ -1,4 +1,4 @@
-スケジュール詳細
+<h2>スケジュール詳細</h2>
 <table>
 	<tbody>
 		<tr>
@@ -15,7 +15,7 @@
 		</tr>
 		<tr>
 			<td>終日</td>
-			<td></td>
+			<td><%= @schedule.full_day == true ? "◯" : " " %></td>
 		</tr>
 		<tr>
 			<td>スケジュールメモ</td>
@@ -24,8 +24,8 @@
 	</tbody>
 </table>
 
-<td><%=link_to "スケジュール一覧に戻る", schedules_path %></td>
-<td><%=link_to "スケジュールを編集する", edit_schedule_path(@schedule) %></td>
-<td><%=link_to "スケジュールを削除", schedule_path(@schedule), method: :delete, data:{confirm:"本当に削除しますか？"} %></td>
-
-
+<ul>
+	<li><%=link_to "スケジュール一覧に戻る", schedules_path %></li>
+	<li><%=link_to "スケジュールを編集する", edit_schedule_path(@schedule) %></li>
+	<li><%=link_to "スケジュールを削除", schedule_path(@schedule), method: :delete, data:{confirm:"本当に削除しますか？"} %></li>
+</ul>
